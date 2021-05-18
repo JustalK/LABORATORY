@@ -7,6 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import ExperienceA from './ExperienceA'
+import ExperienceB from './ExperienceB'
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
               <li>
                 <Link to="/experience_a">ExperienceA</Link>
               </li>
+              <li>
+                <Link to="/experience_b">ExperienceB</Link>
+              </li>
             </ul>
           </nav>
         </div>
@@ -28,6 +32,9 @@ function App() {
           <Switch>
             <Route path="/experience_a">
               <ExperienceA />
+            </Route>
+            <Route path="/experience_b">
+              <ExperienceB />
             </Route>
             <Route path="/">
             </Route>
