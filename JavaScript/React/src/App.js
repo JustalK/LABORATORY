@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import ExperienceA from './ExperienceA'
 import ExperienceB from './ExperienceB'
+import ExperienceC from './ExperienceC'
+import ExperienceD from './ExperienceD'
 
 function App() {
   return (
@@ -25,6 +27,12 @@ function App() {
               <li>
                 <Link to="/experience_b">ExperienceB</Link>
               </li>
+              <li>
+                <Link to="/experience_c">ExperienceC</Link>
+              </li>
+              <li>
+                <Link to="/experience_d">ExperienceD</Link>
+              </li>
             </ul>
           </nav>
         </div>
@@ -35,6 +43,12 @@ function App() {
             </Route>
             <Route path="/experience_b">
               <ExperienceB />
+            </Route>
+            <Route path="/experience_c">
+              <ExperienceC />
+            </Route>
+            <Route path="/experience_d">
+              <ExperienceD />
             </Route>
             <Route path="/">
             </Route>
