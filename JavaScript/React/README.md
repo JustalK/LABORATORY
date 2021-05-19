@@ -12,6 +12,8 @@
 * **ExperienceG2**: useLayoutEffect vs useEffect (useLayoutEffect version)
 * **ExperienceH**: useEffect does not return anything
 * **ExperienceI**: useEffect in a useState
+* **ExperienceJ**: Difference between useRef and createRef
+* **ExperienceK**: createRef and render prioritization
 
 
 ## Fail Experiences (Not possible)
