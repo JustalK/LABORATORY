@@ -14,6 +14,8 @@ import ExperienceE from './ExperienceE'
 import ExperienceF from './ExperienceF'
 import ExperienceG from './ExperienceG'
 import ExperienceG2 from './ExperienceG2'
+import ExperienceH from './ExperienceH'
+import ExperienceI from './ExperienceI'
 
 function App() {
   return (
@@ -49,6 +51,12 @@ function App() {
               <li>
                 <Link to="/experience_g2">ExperienceG2</Link>
               </li>
+              <li>
+                <Link to="/experience_h">ExperienceH</Link>
+              </li>
+              <li>
+                <Link to="/experience_i">ExperienceI</Link>
+              </li>
             </ul>
           </nav>
         </div>
@@ -77,6 +85,12 @@ function App() {
             </Route>
             <Route path="/experience_g2">
               <ExperienceG2 />
+            </Route>
+            <Route path="/experience_h">
+              <ExperienceH />
+            </Route>
+            <Route path="/experience_i">
+              <ExperienceI />
             </Route>
             <Route path="/">
             </Route>

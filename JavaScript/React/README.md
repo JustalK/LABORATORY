@@ -10,6 +10,8 @@
 * **ExperienceF**: using ref as instance variable (+ cleanup problem)
 * **ExperienceG**: useLayoutEffect vs useEffect (useEffect version)
 * **ExperienceG2**: useLayoutEffect vs useEffect (useLayoutEffect version)
+* **ExperienceH**: useEffect does not return anything
+* **ExperienceI**: useEffect in a useState
 
 
 ## Fail Experiences (Not possible)

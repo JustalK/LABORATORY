@@ -14,6 +14,28 @@ const ExperienceD = () => {
     **/
   }, [])
 
+  /**
+  * You cannot put a hook inside a function
+  **/
+  const useless = () => {
+  /**
+    useEffect(() => {
+
+    }, [])
+  **/
+  }
+
+  /**
+  * You cannot put a hook inside a callback
+  **/
+  setTimeout(() => {
+    /**
+    useEffect(() => {
+
+    }, [])
+    **/
+  })
+
   return (
     <div>
       <div>count : {count}</div>
