@@ -19,6 +19,7 @@
 * **ExperienceP**: Creating a custom hook
 * **ExperienceQ**: Passing a global object (Normal one-way binding with props)
 * **ExperienceR**: Passing a global object (UseContext)
+* **ExperienceS**: Render Prop for creating HOC
 
 
 ## Fail Experiences (Not possible)

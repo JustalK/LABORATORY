@@ -16,8 +16,8 @@ function App() {
           <nav>
             <ul>
               {Object.keys(Experiences).map((e, index) => (
-                <li>
-                  <Link key={index} to={"/" + e}>{e}</Link>
+                <li key={index} >
+                  <Link to={"/" + e}>{e}</Link>
                 </li>
               ))}
             </ul>
@@ -28,7 +28,7 @@ function App() {
             {Object.keys(Experiences).map((e, index) => {
               const Type = Experiences[e];
               return (
-                <Route path={"/" + e}>
+                <Route key={index} path={"/" + e}>
                   <Type />
                 </Route>
             )})}
