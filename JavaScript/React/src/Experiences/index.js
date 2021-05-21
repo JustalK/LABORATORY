@@ -13,6 +13,8 @@ import ExperienceK from './ExperienceK'
 import ExperienceL from './ExperienceL'
 import ExperienceO from './ExperienceO'
 import ExperienceP from './ExperienceP'
+import ExperienceQ from './ExperienceQ'
+import ExperienceR from './ExperienceR'
 
 export {
   ExperienceA,
@@ -29,5 +31,7 @@ export {
   ExperienceK,
   ExperienceL,
   ExperienceO,
-  ExperienceP
+  ExperienceP,
+  ExperienceQ,
+  ExperienceR
 }

@@ -17,6 +17,8 @@
 * **ExperienceL**: Multiple nested useState
 * **ExperienceO**: Multiple parameter on useState
 * **ExperienceP**: Creating a custom hook
+* **ExperienceQ**: Passing a global object (Normal one-way binding with props)
+* **ExperienceR**: Passing a global object (UseContext)
 
 
 ## Fail Experiences (Not possible)
