@@ -14,9 +14,12 @@
 * **ExperienceI**: useEffect in a useState
 * **ExperienceJ**: Difference between useRef and createRef
 * **ExperienceK**: createRef and render prioritization
-* **ExperienceK**: Multiple nested useState
+* **ExperienceL**: Multiple nested useState
+* **ExperienceO**: Multiple parameter on useState
+* **ExperienceP**: Creating a custom hook
 
 
 ## Fail Experiences (Not possible)
 
-* **Experience0**: Putting a hook inside a hook
+* **FailExperience0**: Putting a hook inside a hook
+* **FailExperience1**: Putting a hook inside a condition
