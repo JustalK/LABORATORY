@@ -20,7 +20,7 @@
 * **ExperienceQ**: Passing a global object (Normal one-way binding with props)
 * **ExperienceR**: Passing a global object (UseContext)
 * **ExperienceS**: Render Prop for creating HOC
-
+* **ExperienceT**: Fragment and new short syntax
 
 ## Fail Experiences (Not possible)
 
