@@ -21,9 +21,15 @@
 * **ExperienceR**: Passing a global object (UseContext)
 * **ExperienceS**: Render Prop for creating HOC
 * **ExperienceT**: Fragment and new short syntax
-* **ExperienceU**: ErrorBoundary
+* **ExperienceU**: ErrorBoundary (The try catch for component)
+* **ExperienceV**: Suspense and ReactLazy (Experimental: Relay to learn)
 
 ## Fail Experiences (Not possible)
 
 * **FailExperience0**: Putting a hook inside a hook
 * **FailExperience1**: Putting a hook inside a condition
+
+## FAQ
+
+* **Question 1**: Should I use my API call inside useEffect or use the Suspense ?
+The problem with API call inside useEffect is between the moment we do the call and the moment we receive the data, the DOM could have already change. Also doing so, we are actually blocking the render before showing anything. For avoiding this problem, we can load the data using Suspense and Relay.
