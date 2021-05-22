@@ -21,6 +21,7 @@
 * **ExperienceR**: Passing a global object (UseContext)
 * **ExperienceS**: Render Prop for creating HOC
 * **ExperienceT**: Fragment and new short syntax
+* **ExperienceU**: ErrorBoundary
 
 ## Fail Experiences (Not possible)
 

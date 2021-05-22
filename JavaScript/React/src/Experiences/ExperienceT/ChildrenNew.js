@@ -6,8 +6,8 @@ import React from "react"
 export default function Children() {
   return (
     <>
-      <tr>First</tr>
-      <tr>Second</tr>
+      <td>First</td>
+      <td>Second</td>
     </>
   );
 }
