@@ -33,7 +33,7 @@ function App() {
                 </Route>
             )})}
             <Route path="/">
-              <Experiences.ExperienceA />
+              <span>Click on one of the experience on the left side</span>
             </Route>
           </Switch>
         </div>
