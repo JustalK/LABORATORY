@@ -1,8 +1,12 @@
 import React from 'react'
-import { fetchProfileData } from './fakeApi'
-const resource = fetchProfileData();
+import { usePreloadedQuery } from 'react-relay/hooks';
+import { AppRepository } from './AppRepository'
 
-export default function Children() {
-  const user = resource.user.read();
-  return <h1>{user.name}</h1>;
+
+export default function Children(props) {
+  const data = usePreloadedQuery(AppRepository, props.preloadedQuery);
+  if(!data) {
+    return <p>No data</p>
+  }
+  return <p>{data.repository.name}</p>;
 }

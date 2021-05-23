@@ -22,7 +22,7 @@
 * **ExperienceS**: Render Prop for creating HOC
 * **ExperienceT**: Fragment and new short syntax
 * **ExperienceU**: ErrorBoundary (The try catch for component)
-* **ExperienceV**: Suspense and ReactLazy (Experimental: Relay to learn)
+* **ExperienceV**: Suspense and Relay (fetch-while-rendering) (For this one you need to fill up the REACT_APP_GITHUB_AUTH_TOKEN in .env.local - look at the.env.example and copy from it)
 
 ## Fail Experiences (Not possible)
 

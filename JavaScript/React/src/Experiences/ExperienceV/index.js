@@ -1,18 +1,27 @@
 import React, { Suspense, lazy } from 'react'
-import Loading from './Loading'
+import { RelayEnvironmentProvider } from 'react-relay/hooks';
+import RelayEnvironment from './RelayEnvironment';
+import { preloadedQuery } from './AppRepository'
 const Children = lazy(() => import("./Children"))
 
 /**
-* This will use a component has a fallback if an error get trigger
-* A button allow us to re-render the component and come back from the erro
-* It allows us to have only a part of the app to crash and the other part to run
+* npm install --save relay-runtime react-relay
+* npm install --save-dev relay-compiler graphql babel-plugin-relay
+*
+* The above component needs to know how to access the Relay environment, and we
+* need to specify a fallback in case it suspends:
+* - <RelayEnvironmentProvider> tells child components how to talk to the current
+*   Relay Environment instance
+* - <Suspense> specifies a fallback in case a child suspends.
 **/
 export default function ExperienceS() {
   return (
     <div>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Children />
-      </Suspense>
+      <RelayEnvironmentProvider environment={RelayEnvironment}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Children preloadedQuery={preloadedQuery} />
+        </Suspense>
+      </RelayEnvironmentProvider>
     </div>
   );
 }
