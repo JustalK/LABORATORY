@@ -23,6 +23,7 @@
 * **Experience_000019**: Fragment and new short syntax
 * **Experience_000020**: ErrorBoundary (The try catch for component)
 * **Experience_000021**: Suspense and Relay (fetch-while-rendering) (For this one you need to fill up the REACT_APP_GITHUB_AUTH_TOKEN in .env.local - look at the.env.example and copy from it)
+* **Experience_000022**: useState vs useReducer (difference of timing)
 
 ## Fail Experiences (Not possible)
 
