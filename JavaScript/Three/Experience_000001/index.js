@@ -15,8 +15,7 @@ function createAnimation (doc) {
   initConstants()
   createScene()
   createBoard()
-  // createLight(scene);
-  // fog();
+  fog();
   const camera = createCamera(-10)
   const renderer = createRenderer()
   doc.appendChild(renderer.domElement)
@@ -113,14 +112,6 @@ const createCamera = (positionZ) => {
   camera.lookAt(0, 0, constants.board.limit.top)
   constants.scene.add(camera)
   constants.camera = camera
-}
-
-const createLight = (scene) => {
-  const lights = []
-  lights[0] = new THREE.PointLight(0xffffff, 0.1, 0)
-
-  lights[0].position.set(0, 200, 0)
-  scene.add(lights[0])
 }
 
 /**
