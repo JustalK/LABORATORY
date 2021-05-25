@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset=utf-8>
+	    <title>Example</title>
+      <style>
+        body { margin: 0; }
+        #wrap {
+          position: relative;
+          display: flex;
+          width: 100vw;
+          height: 100vh;
+        }
+        .container {
+          background: red;
+          display: block;
+          height: 100%;
+          width: 100%;
+        }
+        .container img {
+          height: 100%;
+          display: none;
+        }
+        .container img:nth-child(2) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+      </style>
+   </head>
+    <body>
+      <div id="wrap">
+         <div class="container" data-displacement="img/displacement/1.jpg" data-intensity="-0.8">
+           <img src="img/Img1.jpg" alt="Image"/>
+           <img src="img/Img2.jpg" alt="Image Alt"/>
+         </div>
+     </div>
+       <script src="../_build/three.min.js"></script>
+       <script src="../_helper/array.js"></script>
+       <script src="../_helper/random.js"></script>
+       <script src="../_helper/windows.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+       <script src="index.js"></script>
+       <script>
+         Array.from(document.querySelectorAll('.container')).forEach((el) => {
+           const imgs = Array.from(el.querySelectorAll('img'));
+           new hoverEffect({
+             parent: el,
+             intensity: el.dataset.intensity || undefined,
+             speedIn: el.dataset.speedin || undefined,
+             speedOut: el.dataset.speedout || undefined,
+             easing: el.dataset.easing || undefined,
+             hover: el.dataset.hover || undefined,
+             image1: imgs[0].getAttribute('src'),
+             image2: imgs[1].getAttribute('src'),
+             displacementImage: el.dataset.displacement
+           });
+         });
+       </script>
+	</body>
+</html>
