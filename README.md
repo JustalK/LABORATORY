@@ -13,4 +13,5 @@ Most of the technology I experiment with I already worked professionally with al
 ## Javascript
 
 * **React**: ([My experiences with React](Javascript/React/README.md))
+* **Three**: ([My experiences with Three and WebGL](Javascript/Three/README.md))
 * **Vue**: ([My experiences with Vue](Javascript/React/README.md))
