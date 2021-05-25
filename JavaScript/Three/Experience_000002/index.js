@@ -113,7 +113,6 @@ var hoverEffect = function(opts) {
             texture2: { type: "t", value: texture2 },
             disp: { type: "t", value: disp }
         },
-
         vertexShader: vertex,
         fragmentShader: fragment,
         transparent: true,
