@@ -1,4 +1,5 @@
 import * as THREE from "three"
+import { BloomEffect, EffectComposer, EffectPass, RenderPass } from "postprocessing";
 
 const constants = {}
 
@@ -10,6 +11,7 @@ const initConstants = doc => {
   constants.clock = null
   constants.scene = null
   constants.board = null
+  constants.composer = null
 }
 
 export const createAnimation = doc => {
@@ -17,9 +19,11 @@ export const createAnimation = doc => {
   initClock()
   createScene()
   createBoard()
+  createLight()
 
   createCamera(-50)
   const renderer = createRenderer()
+  createComposer(renderer)
   doc.appendChild(renderer.domElement)
   render(renderer)
 }
@@ -28,7 +32,12 @@ export const createAnimation = doc => {
 * Create the renderer for the three js animation
 **/
 const createRenderer = () => {
-  const renderer = new THREE.WebGLRenderer({ antialias: true })
+  const renderer = new THREE.WebGLRenderer({
+    powerPreference: "high-performance",
+    antialias: false,
+    stencil: false,
+    depth: false
+  })
   renderer.setSize(constants.width, constants.height)
   renderer.setClearColor(0x000000, 1)
   return renderer
@@ -51,11 +60,17 @@ const createScene = () => {
 const createBoard = () => {
   const board = new THREE.Group()
   const geometry = new THREE.BoxGeometry(20, 20, 20);
-  const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+  const material = new THREE.MeshPhongMaterial( {color: 0x00ff00} );
   const cube = new THREE.Mesh(geometry, material);
   board.add(cube)
   constants.scene.add(board)
   constants.board = board
+}
+
+const createLight = () => {
+  const light = new THREE.DirectionalLight(0xFFFFFF, 2);
+  light.position.set(0, 0, -20);
+  constants.scene.add(light);
 }
 
 /**
@@ -70,6 +85,17 @@ const createCamera = (positionZ) => {
   constants.camera = camera
 }
 
+const createComposer = renderer => {
+  constants.composer = new EffectComposer(renderer);
+  constants.composer.addPass(new RenderPass(constants.scene, constants.camera));
+  const bloomOptions = {
+    luminanceThreshold: 0.4,
+    luminanceSmoothing: 0.1,
+    height: 480
+  };
+  constants.composer.addPass(new EffectPass(constants.camera, new BloomEffect(bloomOptions)));
+}
+
 /**
 * Create the render
 **/
@@ -79,6 +105,8 @@ const render = (renderer) => {
 
   constants.board.children[0].rotation.x += delta;
   constants.board.children[0].rotation.y += delta;
+
+  constants.composer.render(delta);
 
   window.requestAnimationFrame(function () {
     render(renderer, constants.scene, constants.camera)
