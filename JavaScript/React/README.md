@@ -25,7 +25,8 @@
 * **Experience_000021**: Suspense and Relay (fetch-while-rendering) (For this one you need to fill up the REACT_APP_GITHUB_AUTH_TOKEN in .env.local - look at the.env.example and copy from it)
 * **Experience_000022**: useState vs useReducer (difference of timing)
 * **Experience_000023**: useState vs useReducer (Pure function, tests and timing)
-* **Experience_000024**: useReducer (How to use the third parameter)
+* **Experience_000024**: useReducer (How to use the third parameter))
+* **Experience_000025**: useMemo (a function re-evaluated called inside a component)
 
 ## Fail Experiences (Not possible)
 

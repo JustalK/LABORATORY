@@ -16,7 +16,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "yarn run relay && react-scripts start",
+    "start": "react-scripts start",
     "build": "yarn run relay && react-scripts build",
     "relay": "yarn run relay-compiler --schema ./src/Experiences/ExperienceV/schema.graphql --src ./src/ --watchman false $@",
     "test": "react-scripts test",
