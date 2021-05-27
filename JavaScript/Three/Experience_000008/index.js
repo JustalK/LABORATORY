@@ -1,3 +1,7 @@
+import { EffectComposer } from 'https://threejs.org/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'https://threejs.org/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'https://threejs.org/examples/jsm/postprocessing/UnrealBloomPass.js';
+
 const constants = {}
 
 const initConstants = () => {
@@ -8,6 +12,7 @@ const initConstants = () => {
   constants.clock = null
   constants.scene = null
   constants.board = null
+  constants.composer = null
 }
 
 function createAnimation (doc) {
@@ -15,9 +20,11 @@ function createAnimation (doc) {
   initClock()
   createScene()
   createBoard()
+  createLight()
 
   const camera = createCamera(-50)
   const renderer = createRenderer()
+  createComposer(renderer)
   doc.appendChild(renderer.domElement)
   render(renderer)
 }
@@ -29,6 +36,7 @@ const createRenderer = () => {
   const renderer = new THREE.WebGLRenderer({ antialias: true })
   renderer.setSize(constants.width, constants.height)
   renderer.setClearColor(0x000000, 1)
+  renderer.toneMappingExposure = 0
   return renderer
 }
 
@@ -49,11 +57,17 @@ const createScene = () => {
 const createBoard = () => {
   const board = new THREE.Group()
   const geometry = new THREE.BoxGeometry(20, 20, 20);
-  const material = new THREE.MeshBasicMaterial( {color: 0x00ff00, wireframe: true} );
+  const material = new THREE.MeshPhongMaterial( {color: 0x00ff00} );
   const cube = new THREE.Mesh(geometry, material);
   board.add(cube)
   constants.scene.add(board)
   constants.board = board
+}
+
+const createLight = () => {
+  const light = new THREE.DirectionalLight(0xFFFFFF, 2);
+  light.position.set(0, 0, -20);
+  constants.scene.add(light);
 }
 
 /**
@@ -68,6 +82,16 @@ const createCamera = (positionZ) => {
   constants.camera = camera
 }
 
+const createComposer = renderer => {
+  constants.composer = new EffectComposer(renderer);
+  constants.composer.addPass(new RenderPass(constants.scene, constants.camera));
+  const bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 0, 0, 0 );
+  bloomPass.threshold = 0;
+  bloomPass.strength = 0.6;
+  bloomPass.radius = 1;
+  constants.composer.addPass(bloomPass);
+}
+
 /**
 * Create the render
 **/
@@ -77,6 +101,8 @@ const render = (renderer) => {
 
   constants.board.children[0].rotation.x += delta;
   constants.board.children[0].rotation.y += delta;
+
+  constants.composer.render(delta);
 
   window.requestAnimationFrame(function () {
     render(renderer, constants.scene, constants.camera)

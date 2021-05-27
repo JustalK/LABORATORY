@@ -66,6 +66,9 @@ const createRenderer = () => {
   return renderer
 }
 
+/**
+* Start the clock
+**/
 const initClock = () => {
   constants.clock = new THREE.Clock();
 }
