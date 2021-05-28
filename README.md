@@ -10,8 +10,16 @@ This is my way to lean and try new concepts or to improve my knowledge on a part
 
 Most of the technology I experiment with I already worked professionally with all of them. But it's hard to learn a technology at 100% while working with it and since the technologies evolve fast I take my spare time to read the documentation. This way I fill up the gap missing in my knowledge.  
 
+## HTML
+
+Just some testing with the UI
+
 ## Javascript
 
 * **React**: ([My experiences with React](Javascript/React/README.md))
 * **Three**: ([My experiences with Three and WebGL](Javascript/Three/README.md))
 * **Vue**: ([My experiences with Vue](Javascript/React/README.md))
+
+## Mixed
+
+* **Three**: ([My experiences with Three mixed with React](Mixed/Three/README.md))
