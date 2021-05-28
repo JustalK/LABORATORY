@@ -213,7 +213,8 @@ class Figure {
       	st.y *= u_res.y / u_res.x;
 
       	// We readjust the mouse coordinates
-      	vec2 mouse = u_mouse * -0.5;
+      	vec2 mouse = vec2((u_mouse.x / u_res.x) * 2. - 1.,-(u_mouse.y / u_res.y) * 2. + 1.) * -.5;
+        mouse.y *= res.y / res.x;
 
       	vec2 circlePos = st + mouse;
       	float c = circle(circlePos, 0.3, 0.3) * 2.5;
@@ -285,13 +286,8 @@ class Figure {
 
   onMouseMove(event) {
       TM.to(this.mouse, 0.5, {
-          x: (event.clientX / (window.innerWidth)) * 2 - 1,
-          y: -(event.clientY / window.innerHeight) * 2 + 1
-      })
-
-      TM.to(this.mesh.rotation, 0.5, {
-        x: -this.mouse.y * 0.3,
-        y: this.mouse.x * (Math.PI / 6)
+          x: event.clientX,
+          y: event.clientY
       })
   }
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react"
 import Animation from "./index_three"
 import './style.css'
-
+ 
 const Experience = () => {
   const canvas = useRef(null)
 
