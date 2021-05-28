@@ -31,9 +31,10 @@ body {
 
 .canvas {
     position: fixed;
-    left: 201px;
+    left: 0;
     top: 0;
-    width: calc(100vw - 201px);
+    width: 100vw;
     height: 100vh;
     z-index: 9;
+    pointer-events: none;
 }
