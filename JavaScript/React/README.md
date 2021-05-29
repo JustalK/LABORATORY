@@ -26,7 +26,8 @@
 * **Experience_000022**: useState vs useReducer (difference of timing)
 * **Experience_000023**: useState vs useReducer (Pure function, tests and timing)
 * **Experience_000024**: useReducer (How to use the third parameter))
-* **Experience_000025**: useMemo (a function re-evaluated called inside a component)
+* **Experience_000025**: useMemo (a function not re-evaluated called inside a component)
+* **Experience_000026**: useCallback (a function not re-evaluated with child components)
 
 ## Fail Experiences (Not possible)
 
