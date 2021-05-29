@@ -4,9 +4,13 @@ import './style.css'
 
 const Experience = () => {
   const button = useRef(null);
+  const buttonObj = useRef(null);
 
   useEffect(() => {
-    new ButtonCtrl(button.current)
+    buttonObj.current = new ButtonCtrl(button.current)
+    return () => {
+      buttonObj.current.removeEvents()
+    }
   }, []);
 
   return (
