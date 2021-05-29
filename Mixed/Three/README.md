@@ -10,3 +10,5 @@
 * **Experience_000004**: Gooey hover effect
 * **Experience_000005**: Gooey hover effect (with additionnal shader edit)
 * **Experience_000006**: Incorporating a 3D model in the scene
+* **Experience_000007**: ShaderPass hover effect (Distortion 3 colors layer)
+* **Experience_000008**: ShaderPass hover effect (Simple Distortion)
