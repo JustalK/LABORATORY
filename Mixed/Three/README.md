@@ -12,3 +12,4 @@
 * **Experience_000006**: Incorporating a 3D model in the scene
 * **Experience_000007**: ShaderPass hover effect (Distortion 3 colors layer)
 * **Experience_000008**: ShaderPass hover effect (Simple Distortion)
+* **Experience_000009**: ShaderPass hover effect (Zoom Distortion)
