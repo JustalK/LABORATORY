@@ -1,5 +1,4 @@
 .navigation {
-  position: fixed;
   opacity: 0.8;
   z-index: 200;
   width: 200px;
@@ -11,7 +10,7 @@
 }
 
 .content {
-  width: calc(100%);
+  width: calc(100% - 201px);
   float: left;
 }
 
