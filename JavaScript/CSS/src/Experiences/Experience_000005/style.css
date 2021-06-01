@@ -1,0 +1,24 @@
+html { height: 100%; display: flex; }
+
+.content__paragraph {
+	margin: 0;
+	line-height: 1.25;
+	position: relative;
+	overflow: hidden;
+	flex: none;
+  max-width:300px;
+}
+
+.splitting .char {
+  display: inline-block;
+  position: relative;
+  animation: slide-in .6s cubic-bezier(.5, 0, .5, 1) both;
+  animation-delay: calc(3ms * var(--char-index) + 1000ms );
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(1.5em);
+    opacity: 0;
+  }
+}

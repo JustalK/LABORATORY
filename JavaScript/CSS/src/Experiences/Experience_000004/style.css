@@ -1,11 +1,11 @@
-.container {
+.c000004 .container {
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
 }
 
-.btn {
+.c000004 .btn {
   display: block;
   text-decoration: none;
   border: solid 2px;
@@ -16,20 +16,21 @@
   font-size: 20px;
   transition: color 0.6s linear;
 }
-.btn:hover {
+.c000004 .btn:hover {
   color: #84577C;
 }
 
-.word {
+.c000004 .word {
   display: inline-block;
   position: relative;
   visibility: hidden;
   overflow: hidden;
   vertical-align: bottom;
+  color: red;
 }
 
-.word:before,
-.word:after {
+.c000004 .word:before,
+.c000004 .word:after {
   content: attr(data-word);
   user-select: none;
   position: absolute;
@@ -39,17 +40,17 @@
   transition: transform 0.6s cubic-bezier(.37,.03,.09,.98);
   transition-delay: calc( 0.1s * var(--word-index) );
 }
-.word:after {
+.c000004 .word:after {
   color: #84577C;
   transform: translateY(100%);
 }
-.word:last-child:after {
+.c000004 .word:last-child:after {
   color:  #C65F63;
 }
 
-.btn.splitting:hover .word:before {
+.c000004 .btn.splitting:hover .word:before {
   transform: translateY(-100%);
 }
-.btn.splitting:hover .word:after {
+.c000004 .btn.splitting:hover .word:after {
   transform: translateY(0);
 }
