@@ -27,8 +27,8 @@ const Experience = () => {
       <div aria-hidden="true">
         <button ref={button} id="js-ripple-btn" className="button styl-material">
           Click for Ripple
-          <svg className="ripple-obj" ref={svg}>
-            <use width="4" height="4" className="js-ripple" xlinkHref="#ripply-scott"></use>
+          <svg className="ripple-obj">
+            <use width="4" height="4" ref={svg} className="js-ripple" xlinkHref="#ripply-scott"></use>
           </svg>
         </button>
       </div>
