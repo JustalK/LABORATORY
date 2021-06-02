@@ -13,14 +13,14 @@ body {
     --cursor-stroke-width: 1px;
 }
 
-.container {
+.experience_000001 .container {
   display: flex;
     justify-content: center;
     height: 100vh;
     align-items: center;
 }
 
-.button {
+.experience_000001 .button {
 	cursor: pointer;
 	-moz-appearance: none;
 	-webkit-appearance: none;
@@ -43,8 +43,8 @@ body {
 	transition: border-color 0.2s ease;
 }
 
-.button:focus,
-.button--hover {
+.experience_000001 .button:focus,
+.experience_000001 .button--hover {
 	outline: none;
 	border-width: var(--button-stroke-width-hover);
 	border-color: var(--button-stroke-hover);
@@ -52,8 +52,8 @@ body {
 	background: var(--button-bg-hover);
 }
 
-.button__text,
-.button__text-inner {
+.experience_000001 .button__text,
+.experience_000001 .button__text-inner {
 	display: flex;
 	align-items: center;
 	justify-content: center;
