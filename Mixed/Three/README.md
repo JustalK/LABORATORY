@@ -14,3 +14,4 @@
 * **Experience_000008**: ShaderPass hover effect (Simple Distortion)
 * **Experience_000009**: ShaderPass hover effect (Zoom Distortion)
 * **Experience_000010**: ShaderPass hover effect (Pixel Effect)
+* **Experience_000011**: Scroll with multiple image in Three.js
