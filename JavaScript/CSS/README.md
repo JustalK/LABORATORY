@@ -8,4 +8,4 @@
 * **Experience_000004**: Hover effect (before after translate) with splitting.js
 * **Experience_000005**: Text apparition with splitting.js
 * **Experience_000006**: SVG animation on click button
-* **Experience_000007**: Mask button hover effect
+* **Experience_000007**: Mask button hover effect (mask and nask-size mixed with step)

@@ -1,0 +1,77 @@
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+.experience_000007 .mask {
+    position: absolute;
+    color: #000;
+    text-align: center;
+    width: 101%;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    position: absolute;
+    font-size: 11px;
+    margin-top: 17px;
+    overflow: hidden;
+	  font-weight: bold;
+}
+
+.experience_000007 a {
+  color:#00ff95;
+}
+
+.experience_000007 .container {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8vh;
+  overflow: hidden;
+  border: 1px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  border-radius: 8px;
+
+}
+
+.experience_000007 button {
+  width: 101%;
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  cursor: pointer;
+  animation: ani2 0.7s steps(70) forwards;
+  background: #000;
+  mask: url("./mask.png");
+  mask-size: 7100% 100%;
+  border: none;
+  color: #fff;
+}
+
+.experience_000007 button:hover {
+  animation: ani 0.7s steps(70) forwards;
+}
