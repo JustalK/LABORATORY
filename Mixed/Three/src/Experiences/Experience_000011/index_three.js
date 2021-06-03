@@ -1,4 +1,5 @@
 import * as THREE from "three"
+import { TweenMax as TM } from 'gsap'
 
 
 export default class Animation {
@@ -36,6 +37,7 @@ export default class Animation {
     switch(event.type) {
       case('scroll'):
         this.offsetY = window.pageYOffset;
+        this.camera.position.y = -this.offsetY
         break
       default:
     }
@@ -86,11 +88,9 @@ export default class Animation {
   }
 
   render() {
-    this.renderer.render(this.scene, this.camera)
     const delta = this.clock.getDelta()
 
-    this.scene.position.y = this.offsetY
-
+    this.renderer.render(this.scene, this.camera)
     window.requestAnimationFrame(this.render.bind(this))
   }
 }
@@ -120,10 +120,9 @@ class Image {
   initSize() {
     const { width, height, left, top } = this.$image.getBoundingClientRect()
     this.sizes.set(width, height)
-    console.log(top)
     this.offset.set(
         left - window.innerWidth / 2 + width / 2,
-        -top + window.innerHeight / 2 - height / 2
+        -top - window.pageYOffset + window.innerHeight / 2 - height / 2
     )
   }
 
