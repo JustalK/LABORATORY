@@ -22,17 +22,7 @@ export default class Ripple {
         const clientOffsetY = Math.abs((offsetHeight / 2) - offsetY)
         const deltaX = (offsetWidth / 2) + clientOffsetX
         const deltaY = (offsetHeight / 2) + clientOffsetY
-        const scale_ratio = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
-
-        console.log('x is:' + offsetX);
-        console.log('y is:' + offsetY);
-        console.log('offsetX is:' + clientOffsetX);
-        console.log('offsetY is:' + clientOffsetY);
-        console.log('deltaX is:' + deltaX);
-        console.log('deltaY is:' + deltaY);
-        console.log('width is:' + offsetWidth);
-        console.log('height is:' + offsetHeight);
-        console.log('scale ratio is:' + scale_ratio);
+        const scale_ratio = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2))
 
         TM.fromTo(this.svg, this.timing, {
           x: offsetX,

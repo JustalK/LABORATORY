@@ -13,3 +13,4 @@
 * **Experience_000007**: ShaderPass hover effect (Distortion 3 colors layer)
 * **Experience_000008**: ShaderPass hover effect (Simple Distortion)
 * **Experience_000009**: ShaderPass hover effect (Zoom Distortion)
+* **Experience_000010**: ShaderPass hover effect (Pixel Effect)
