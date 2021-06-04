@@ -1,5 +1,5 @@
 import * as THREE from "three"
-import { TweenMax as TM } from 'gsap'
+import { EffectComposer, RenderPass, ShaderPass } from "postprocessing";
 
 
 export default class Animation {
@@ -13,6 +13,11 @@ export default class Animation {
   clock = null
   board = null
   offsetY = 0
+  images = []
+  mouse = new THREE.Vector2(0, 0)
+  composer = null
+  customPass = null
+  error = false
 
   constructor($doc, $images) {
     this.width = $doc.clientWidth
@@ -21,7 +26,7 @@ export default class Animation {
     this.initRenderer()
     this.initScene()
     this.initCamera()
-    this.initBoard()
+    this.initComposer()
     this.initImages($images)
     this.initClock()
 
@@ -31,20 +36,40 @@ export default class Animation {
 
   initEvents() {
     window.addEventListener('scroll', this)
+    window.addEventListener('mousemove', this)
   }
 
   handleEvent(event) {
     switch(event.type) {
       case('scroll'):
-        this.offsetY = window.pageYOffset;
-        this.camera.position.y = -this.offsetY
+        this.handleScrollEvent()
+        clearTimeout(this.handleScrollTimeout)
+        this.handleScrollTimeout = setTimeout(() => this.handleScrollStopEvent(), 50)
+        break
+      case('mousemove'):
+        this.mouse.x = (event.clientX / window.innerWidth)
+        this.mouse.y = 1. - (event.clientY/ window.innerHeight)
         break
       default:
     }
   }
 
+  handleScrollEvent() {
+    this.images.forEach(image => {
+      image.invisible()
+    })
+  }
+
+  handleScrollStopEvent() {
+    this.images.forEach(image => {
+      this.camera.position.y = -window.pageYOffset
+      image.visible()
+    })
+  }
+
   removeEvents() {
     window.removeEventListener('scroll', this)
+    window.removeEventListener('mousemove', this)
   }
 
   initRenderer() {
@@ -63,23 +88,54 @@ export default class Animation {
     this.camera.position.set(0, 0, this.perspective)
   }
 
-  initBoard() {
-    this.board = new THREE.Group()
-    const geometry = new THREE.BoxGeometry(20, 20, 20);
-    const material = new THREE.MeshBasicMaterial( {color: 0x00ff00, wireframe: true} );
-    const cube = new THREE.Mesh(geometry, material);
-    this.board.add(cube)
-    this.scene.add(this.board)
+  initComposer() {
+    this.composer = new EffectComposer(this.renderer);
+    const renderPass = new RenderPass(this.scene, this.camera);
+    this.composer.addPass(renderPass);
+    this.myEffect = new THREE.ShaderMaterial({
+      uniforms: {
+        tDiffuse: { value: null },
+        resolution: { value: new THREE.Vector2(1.0,window.innerHeight/window.innerWidth) },
+        uMouse: { value: new THREE.Vector2(-10,-10) },
+        uVelo: { value: 0.05 }
+      },
+      vertexShader: `varying vec2 vUv;void main() {vUv = uv;gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0 );}`,
+      fragmentShader: `uniform float time;
+      uniform sampler2D tDiffuse;
+      uniform vec2 resolution;
+      varying vec2 vUv;
+      uniform vec2 uMouse;
+      uniform float uVelo;
+      float circle(vec2 uv, vec2 disc_center, float disc_radius, float border_size) {
+        uv -= disc_center;
+        uv*=resolution;
+        float dist = sqrt(dot(uv, uv));
+        return smoothstep(disc_radius+border_size, disc_radius-border_size, dist);
+      }
+      void main()  {
+          vec2 newUV = vUv;
+	        vec4 color = vec4(1.,0.,0.,1.);
+          float c = circle(newUV, uMouse, 0.0, 0.1+0.05*2.)*40.*uVelo;
+      		vec2 offsetVector = normalize(uMouse - vUv);
+      		vec2 warpedUV = mix(vUv, uMouse, c * 0.99); //power
+      		color = texture2D(tDiffuse,warpedUV) + texture2D(tDiffuse,warpedUV)*vec4(vec3(c),1.);
+
+          gl_FragColor = color;
+      }`
+    })
+    this.customPass = new ShaderPass(this.myEffect, "tDiffuse");
+    this.customPass.renderToScreen = true;
+    this.composer.addPass(this.customPass);
   }
 
   initImages($images) {
     $images.forEach($image => {
-      new Image({
+      this.images.push(new Image({
         scene: this.scene,
         width: this.width,
         height: this.height,
         $image
-      })
+      }))
     })
   }
 
@@ -88,10 +144,18 @@ export default class Animation {
   }
 
   render() {
-    const delta = this.clock.getDelta()
-
-    this.renderer.render(this.scene, this.camera)
-    window.requestAnimationFrame(this.render.bind(this))
+    if (!this.error) {
+      try {
+        if (this.renderer === undefined) return;
+        window.requestAnimationFrame(this.render.bind(this))
+        const delta = this.clock.getDelta();
+        this.myEffect.uniforms.uMouse.value = this.mouse;
+        this.composer.render(delta)
+      } catch(e) {
+        console.log(e)
+        this.error = true
+      }
+    }
   }
 }
 
@@ -105,6 +169,7 @@ class Image {
     this.scene = scene
     this.width = width
     this.height = height
+    this.material = null
 
     this.initLoader()
   }
@@ -126,10 +191,24 @@ class Image {
     )
   }
 
+  invisible() {
+    if (this.mesh) {
+      this.$image.style.opacity = 1
+      this.mesh.visible = false
+    }
+  }
+
+  visible() {
+    if (this.mesh) {
+      this.$image.style.opacity = 0
+      this.mesh.visible = true
+    }
+  }
+
   createMesh() {
     const geometry = new THREE.PlaneBufferGeometry(1, 1, 1, 1);
-    const material = new THREE.MeshBasicMaterial( {map: this.image} )
-    this.mesh = new THREE.Mesh(geometry, material)
+    this.material = new THREE.MeshBasicMaterial( {map: this.image} )
+    this.mesh = new THREE.Mesh(geometry, this.material)
     this.mesh.position.set(this.offset.x, this.offset.y, 0)
     this.mesh.scale.set(this.sizes.x, this.sizes.y, 1)
     this.scene.add(this.mesh)

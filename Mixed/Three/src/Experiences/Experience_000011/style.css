@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-flow: column;
 }
 
 .experience_000011 .image-container {
@@ -11,8 +12,13 @@
   height: 300px;
 }
 
+.experience_000011 span {
+  width: 80%;
+}
+
 .experience_000011 img {
-  filter: brightness(0);
+  object-fit: fill;
+  opacity: 0;
 }
 
 .experience_000011 #canvas {
