@@ -6,7 +6,10 @@ import Scene from './Scene'
 export default function Experience() {
   const scrollRef = useRef()
   const scroll = useRef(0)
-  const doScroll = (e) => (scroll.current = e.target.scrollTop / e.target.scrollHeight)
+  const page = 3
+  const doScroll = (e) => {
+    (scroll.current = page * e.target.scrollTop / (e.target.scrollHeight - window.innerHeight));
+  }
   return (
     <div id="canvas-container">
       <Canvas
@@ -19,7 +22,7 @@ export default function Experience() {
         </ScrollContainer>
       </Canvas>
       <div ref={scrollRef} onScroll={doScroll} className="scroll">
-        <div style={{ height: `200vh`, pointerEvents: 'none' }}></div>
+        <div style={{ height: `${(page + 1) * 100}vh`, pointerEvents: 'none' }}></div>
       </div>
     </div>
   )

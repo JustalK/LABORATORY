@@ -1,13 +1,15 @@
 import React from 'react'
 import { useThree } from '@react-three/fiber'
-import Box from './Box'
+import Page from './Page'
 
 export default function Scene() {
   const viewport = useThree((state) => state.viewport)
   return (
     <>
-      <Box text={<span>This is HTML</span>} color="aquamarine" />
-      <Box text={<h1>H1 caption</h1>} color="lightblue" position={[0, -viewport.height / 2, 0]} />
+      <Page text={<h1>1</h1>} color="aquamarine" />
+      <Page text={<h1>2</h1>} color="lightblue" position={[0, -viewport.height, 0]} />
+      <Page text={<h1>3</h1>} color="lightblue" position={[0, -2 * viewport.height, 0]} />
+      <Page text={<h1>4</h1>} color="lightblue" position={[0, -3 * viewport.height, 0]} />
     </>
   )
 }

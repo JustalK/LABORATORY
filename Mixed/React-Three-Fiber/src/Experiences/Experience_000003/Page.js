@@ -5,9 +5,9 @@ export default function Box({ text, color, ...props }) {
   const [hovered, set] = useState(false)
   return (
     <mesh {...props} onPointerOver={(e) => set(true)} onPointerOut={(e) => set(false)}>
-      <boxGeometry args={[2, 2, 2]} />
+      <planeGeometry args={[2, 2, 2]} />
       <meshStandardMaterial color={hovered ? 'hotpink' : color} />
-      <Html position={[0, 0, 1]} className="label" center>
+      <Html position={[0, 0, 0]} className="label" center>
         {text}
       </Html>
     </mesh>
