@@ -15,7 +15,7 @@
   float: left;
 }
 
-#canvas {
-  width: calc(100vw);
+#canvas-container {
+  width: 100%;
   height: 100vh;
 }
