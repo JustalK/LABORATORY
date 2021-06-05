@@ -1,0 +1,21 @@
+.navigation {
+  position: fixed;
+  opacity: 0.8;
+  z-index: 200;
+  width: 200px;
+  display: block;
+  height: 100vh;
+  float: left;
+  border-right: 1px solid black;
+  background: #e2e2e2;
+}
+
+.content {
+  width: calc(100%);
+  float: left;
+}
+
+#canvas {
+  width: calc(100vw);
+  height: 100vh;
+}
