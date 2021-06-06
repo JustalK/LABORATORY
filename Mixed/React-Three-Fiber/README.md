@@ -8,3 +8,4 @@
 * **Experience_000003**: Scroll with multiple events
 * **Experience_000004**: Adding a shadder to an element
 * **Experience_000005**: Adding a special shadder removing green channel
+* **Experience_000006**: Scroll with shader and parallax
