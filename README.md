@@ -24,3 +24,4 @@ Just some testing with the UI
 ## Mixed
 
 * **Three**: ([My experiences with Three mixed with React](Mixed/Three/README.md))
+* **React-Three-Fiber**: ([My experiences with React-Three-Fiber](Mixed/Three/README.md))

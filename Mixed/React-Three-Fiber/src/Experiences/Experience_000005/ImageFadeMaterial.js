@@ -20,11 +20,6 @@ export class ImageFadeMaterial extends THREE.ShaderMaterial {
       uniform vec2 resolution;
       varying vec2 vUv;
       uniform vec2 uMouse;
-      uniform float uVelo;
-      float hash12(vec2 p) {
-        float h = dot(p,vec2(127.1,311.7));
-        return fract(sin(h)*43758.5453123);
-      }
       float circle(vec2 uv, vec2 disc_center, float disc_radius, float border_size) {
         uv -= disc_center;
         uv*=resolution;
@@ -33,13 +28,18 @@ export class ImageFadeMaterial extends THREE.ShaderMaterial {
       }
       void main()  {
           vec2 newUV = vUv;
-	        vec4 color = vec4(1.,0.,0.,1.);
-          float hash = hash12(vUv*10.);
-      		float c = circle(newUV, uMouse, 0.0, 0.1+uVelo*0.01)*10.*uVelo;
-      		vec2 warpedUV = vUv + vec2(hash - 0.5)*c;
-      		color = texture2D(tDiffuse,warpedUV) + texture2D(tDiffuse,warpedUV)*vec4(vec3(c),1.);
+          float c = circle(vUv, uMouse, 0.075, 0.05);
+          float r = texture2D(tDiffuse, newUV.xy  -= c * (0.1 * .15)).x;
+          float b = texture2D(tDiffuse, newUV.xy  += c * (0.1 * .15)).z;
+          vec4 color = vec4(r, 0., b, 1.);
 
-          gl_FragColor = color;
+          float finalMask = smoothstep(0.4, 0.5, c);
+
+        	vec4 hover = texture2D(tDiffuse, vUv);
+
+        	vec4 finalImage = mix(hover, color, finalMask);
+
+          gl_FragColor = finalImage;
       }`
     })
   }
