@@ -8,18 +8,26 @@ export class ImageFadeMaterial extends THREE.ShaderMaterial {
         tDiffuse: { value: undefined },
         resolution: { value: new THREE.Vector2(window.innerHeight/window.innerWidth,window.innerHeight/window.innerWidth) },
         uMouse: { value: new THREE.Vector2(0, 0) },
-        uVelo: { value: 0.05 }
+        uVelo: { value: 0.0 },
+        uTime: { value: 0 }
       },
-      vertexShader: `varying vec2 vUv;
+      vertexShader: `
+      varying vec2 vUv;
+      uniform float uTime;
+      uniform float uVelo;
       void main() {
+        vec3 pos = position;
+        pos.x += sin(pos.y*30.0+uTime)/100.0 * uVelo;
+        pos.y += sin(pos.x*30.0+uTime)/100.0 * uVelo;
         vUv = uv;
-        gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(pos,1.);
       }`,
-      fragmentShader: `uniform float time;
+      fragmentShader: `
       uniform sampler2D tDiffuse;
       uniform vec2 resolution;
       varying vec2 vUv;
       uniform vec2 uMouse;
+      uniform float uTime;
       float circle(vec2 uv, vec2 disc_center, float disc_radius, float border_size) {
         uv -= disc_center;
         uv*=resolution;
@@ -43,7 +51,18 @@ export class ImageFadeMaterial extends THREE.ShaderMaterial {
       }`
     })
   }
-
+  get uVelo() {
+    return this.uniforms.uVelo.value
+  }
+  set uVelo(v) {
+    return (this.uniforms.uVelo.value = v)
+  }
+  get uTime() {
+    return this.uniforms.uTime.value
+  }
+  set uTime(v) {
+    return (this.uniforms.uTime.value = v)
+  }
   get tDiffuse() {
     return this.uniforms.tDiffuse.value
   }
