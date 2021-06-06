@@ -17,8 +17,8 @@ export class ImageFadeMaterial extends THREE.ShaderMaterial {
       uniform float uVelo;
       void main() {
         vec3 pos = position;
-        pos.x += sin(pos.y*30.0+uTime)/100.0 * uVelo;
-        pos.y += sin(pos.x*30.0+uTime)/100.0 * uVelo;
+        pos.x += sin(pos.y*10.0*uVelo+uTime)/100.0 * uVelo;
+        pos.y += sin(pos.x*10.0*uVelo+uTime)/100.0 * uVelo;
         vUv = uv;
         gl_Position = projectionMatrix * modelViewMatrix * vec4(pos,1.);
       }`,
@@ -28,6 +28,7 @@ export class ImageFadeMaterial extends THREE.ShaderMaterial {
       varying vec2 vUv;
       uniform vec2 uMouse;
       uniform float uTime;
+      uniform float uVelo;
       float circle(vec2 uv, vec2 disc_center, float disc_radius, float border_size) {
         uv -= disc_center;
         uv*=resolution;
@@ -36,10 +37,11 @@ export class ImageFadeMaterial extends THREE.ShaderMaterial {
       }
       void main()  {
           vec2 newUV = vUv;
-          float c = circle(vUv, uMouse, 0.075, 0.05);
-          float r = texture2D(tDiffuse, newUV.xy  -= c * (0.1 * .15)).x;
-          float b = texture2D(tDiffuse, newUV.xy  += c * (0.1 * .15)).z;
-          vec4 color = vec4(r, 0., b, 1.);
+          float c = circle(vUv, uMouse, 0.1 + (1.0 - uVelo), 0.05);
+          float r = texture2D(tDiffuse, newUV.xy  -= c * (0.1 * .15 * uVelo)).x;
+          float g = texture2D(tDiffuse, newUV.xy).y;
+          float b = texture2D(tDiffuse, newUV.xy  += c * (0.1 * .15 * uVelo)).z;
+          vec4 color = vec4(r, g * (1.0 - uVelo), b, 1.);
 
           float finalMask = smoothstep(0.4, 0.5, c);
 
