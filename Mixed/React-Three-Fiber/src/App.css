@@ -41,9 +41,11 @@ h1 {
 
 .date {
   color: #ff1050;
+  pointer-events: none;
 }
 
 .name {
   color: white;
   text-align: center;
+  pointer-events: none;
 }
