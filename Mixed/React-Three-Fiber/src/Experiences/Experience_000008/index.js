@@ -5,7 +5,10 @@ import Cursor from './Cursor'
 import { TweenMax as TM } from 'gsap'
 
 export default function Experience() {
-  const cursorPosition = useRef(0)
+  const cursorPosition = useRef({
+    x: 0,
+    y: 0
+  })
   return (
     <div id="canvas-container" onPointerMove={(e) => {
       TM.to(cursorPosition.current, 0.3, {
