@@ -9,3 +9,5 @@
 * **Experience_000004**: Adding a shadder to an element
 * **Experience_000005**: Adding a special shadder removing green channel
 * **Experience_000006**: Scroll with shader and parallax
+* **Experience_000007**: Playing with a linker (node three js)
+* **Experience_000008**: Playing with a cursor and shader on image
