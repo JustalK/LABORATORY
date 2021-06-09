@@ -18,10 +18,10 @@ export default function Cursor({ cursorPosition }) {
     } else {
       const dx =  state.mouse.x - lastMouseX.current
       const dy =  state.mouse.y - lastMouseY.current
-      const speedX = Math.round(dx / delta * 100)
+      const speedX = Math.abs(Math.round(dx / delta * 100))
       const speedY = Math.abs(Math.round(dy / delta * 100))
 
-      material.current.uVeloX = speedX < 10 ? Math.max(0.0, material.current.uVeloX - 0.05) : Math.min(1.0, material.current.uVeloX + 0.05)
+      material.current.uVeloX = Math.abs(speedX) < 10 ? Math.max(0.0, material.current.uVeloX - 0.05) : Math.min(1.0, material.current.uVeloX + 0.05)
       material.current.uVeloY = speedY < 10 ? Math.max(0.0, material.current.uVeloY - 0.05) : Math.min(1.0, material.current.uVeloY + 0.05)
 
       lastMouseX.current = state.mouse.x
