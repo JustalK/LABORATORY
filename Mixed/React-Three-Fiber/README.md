@@ -11,3 +11,5 @@
 * **Experience_000006**: Scroll with shader and parallax
 * **Experience_000007**: Playing with a linker (node three js)
 * **Experience_000008**: Playing with a cursor and shader on image
+* **Experience_000009**: Draw a curve with line
+* **Experience_000010**: Draw a curve with SplineCurve
