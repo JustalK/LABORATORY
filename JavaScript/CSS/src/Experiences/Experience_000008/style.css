@@ -1,0 +1,19 @@
+.experience_000008 {
+  position: relative;
+  width: 50%;
+  margin: auto;
+}
+
+.experience_000008 span > span {
+  font: 16px Monaco, MonoSpace;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: bottom center;
+}
+
+.experience_000008 span > span > span {
+  text-transform: uppercase;
+  transform: rotateZ(calc(var(--char-index) * 10deg));
+}
