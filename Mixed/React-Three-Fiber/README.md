@@ -13,3 +13,4 @@
 * **Experience_000008**: Playing with a cursor and shader on image
 * **Experience_000009**: Draw a curve with line
 * **Experience_000010**: Draw a curve with SplineCurve
+* **Experience_000011**: Sticky position inside React for parallax
