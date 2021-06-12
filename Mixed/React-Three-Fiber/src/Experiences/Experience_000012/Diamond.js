@@ -44,7 +44,7 @@ export default function Diamond() {
     // Render env to screen
     camera.layers.set(1)
     gl.setRenderTarget(null)
-    //gl.render(scene, camera)
+    gl.render(scene, camera)
     gl.clearDepth()
     // Render cube with refraction material to screen
     camera.layers.set(0)

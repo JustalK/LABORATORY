@@ -8,8 +8,8 @@ export default function Experience() {
     <div id="canvas-container">
       <Canvas linear camera={{ fov: 50, position: [0, 0, 30] }}>
         <Suspense fallback={null}>
-          <Background />
           <Diamond />
+          <Background />
         </Suspense>
       </Canvas>
     </div>
