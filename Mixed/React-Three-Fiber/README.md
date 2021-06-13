@@ -15,3 +15,6 @@
 * **Experience_000010**: Draw a curve with SplineCurve
 * **Experience_000011**: Sticky position inside React for parallax
 * **Experience_000012**: Creating a reflection effect with shader
+* **Experience_000013**: Creating a reflection effect without any background (portal effect)
+* **Experience_000015**: Creating a progress shader effect from top to bottom (gl-transitions)
+* **Experience_000016**: Creating a progress shader effect from (gl-transition)
