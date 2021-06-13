@@ -20,7 +20,7 @@ export default function Experience({ location }) {
         <ambientLight intensity={0.1} />
         <directionalLight color="pink" position={[-1, 3, 5]} />
         {transitions((props, item) => (
-          <a.mesh scale={props.scale}>
+          <a.mesh scale={props.scale} position={[-2, 0, 0]}>
             <boxGeometry />
             <meshPhongMaterial />
           </a.mesh>
