@@ -1,44 +1,54 @@
 import './App.css';
 import React from "react";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useLocation
 } from "react-router-dom";
 import * as Experiences from './Experiences'
+import Experience_000000 from './Experiences/Experience_000000'
+import Experience_000001 from './Experiences/Experience_000001'
+import { useTransition, animated } from 'react-spring'
 
 function App() {
+  const location = useLocation()
+  const transitions = useTransition(location, location => location.pathname, {
+    from: { opacity: 0, transform: 'translate3d(100vw, 0, 0)' },
+    enter: { opacity: 1, transform: 'translate3d(0, 0, 0)' },
+    leave: { opacity: 0, transform: 'translate3d(-100vw, 0, 0)' },
+    mass: 1,
+    tension: 210,
+    friction: 20
+  })
+
   return (
-    <Router>
-      <div>
-        <div className="navigation">
-          <nav>
-            <ul>
-              {Object.keys(Experiences).map((e, index) => (
-                <li key={index} >
-                  <Link to={"/" + e}>{e}</Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-        <div className="content">
-          <Switch>
-            {Object.keys(Experiences).map((e, index) => {
-              const Type = Experiences[e];
-              return (
-                <Route key={index} path={"/" + e}>
-                  <Type />
-                </Route>
-            )})}
-            <Route path="/">
-              <span>Click on one of the experience on the left side</span>
-            </Route>
-          </Switch>
-        </div>
+    <div>
+      <div className="navigation">
+        <nav>
+          <ul>
+            {Object.keys(Experiences).map((e, index) => (
+              <li key={index} >
+                <Link to={"/" + e}>{e}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
-    </Router>
+      <div className="content">
+        {transitions.map(({ item, props, key }) => (
+          <animated.div key={key} style={props}>
+            <Switch location={item}>
+              <Route path="/experience_000000" component={Experience_000000} location={location} exact />
+              <Route path="/experience_000001" component={Experience_000001} />
+              <Route path="/">
+              <span>Click on one of the experience on the left side</span>
+              </Route>
+            </Switch>
+          </animated.div>
+        ))}
+      </div>
+    </div>
   );
 }
 
