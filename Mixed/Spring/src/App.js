@@ -9,6 +9,8 @@ import {
 import * as Experiences from './Experiences'
 import Experience_000000 from './Experiences/Experience_000000'
 import Experience_000001 from './Experiences/Experience_000001'
+import Experience_000002 from './Experiences/Experience_000002'
+import Experience_000003 from './Experiences/Experience_000003'
 import { useTransition, animated } from 'react-spring'
 
 function App() {
@@ -41,8 +43,10 @@ function App() {
             <Switch location={item}>
               <Route path="/experience_000000" component={Experience_000000} location={location} exact />
               <Route path="/experience_000001" component={Experience_000001} />
+              <Route path="/experience_000002" component={Experience_000002} />
+              <Route path="/experience_000003" component={Experience_000003} />
               <Route path="/">
-              <span>Click on one of the experience on the left side</span>
+                <span>Click on one of the experience on the left side</span>
               </Route>
             </Switch>
           </animated.div>
