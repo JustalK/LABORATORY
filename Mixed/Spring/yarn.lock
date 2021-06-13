@@ -1639,6 +1639,51 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
+"@react-spring/animated@~9.2.0":
+  "integrity" "sha512-xxYOxxrk4r+yy218lVnkR027GXGvHcadDnnXRW0l6atcL+1AGYwimMwIuvzlvnsVnyoK0YUABEeGjk9ENOrVMQ=="
+  "resolved" "https://registry.npmjs.org/@react-spring/animated/-/animated-9.2.3.tgz"
+  "version" "9.2.3"
+  dependencies:
+    "@react-spring/shared" "~9.2.0"
+    "@react-spring/types" "~9.2.0"
+
+"@react-spring/core@~9.2.0":
+  "integrity" "sha512-8qJbj0xjjoYGVqdmNd2bVaFzKSAwrMVLweHkaYJiTY6p0g7LhSdt5KSl1MjYA4Rj6S4wO1KgefAPK6mH6MtGtA=="
+  "resolved" "https://registry.npmjs.org/@react-spring/core/-/core-9.2.3.tgz"
+  "version" "9.2.3"
+  dependencies:
+    "@react-spring/animated" "~9.2.0"
+    "@react-spring/shared" "~9.2.0"
+    "@react-spring/types" "~9.2.0"
+
+"@react-spring/rafz@~9.2.0":
+  "integrity" "sha512-ThBI3HWp1Y82uRSFVpoykwgM3M9s3SJD6ilKKp9C2OTPcGhWiRGt1IMjzKPwB+F1NX3psbPTt30Bev8WzA/DQQ=="
+  "resolved" "https://registry.npmjs.org/@react-spring/rafz/-/rafz-9.2.3.tgz"
+  "version" "9.2.3"
+
+"@react-spring/shared@~9.2.0":
+  "integrity" "sha512-MehdmKao1oUAwSEJo8BXOz1OGgsSav/dimD1Vz920hirShj9s/I4zKnWtkdK92xQ4n35D/xD3hATHkXbt/WSvg=="
+  "resolved" "https://registry.npmjs.org/@react-spring/shared/-/shared-9.2.3.tgz"
+  "version" "9.2.3"
+  dependencies:
+    "@react-spring/rafz" "~9.2.0"
+    "@react-spring/types" "~9.2.0"
+
+"@react-spring/three@^9.2.3":
+  "integrity" "sha512-DMns/lTWmJ7EFJHf+7CERBAUWWZ314FPQGAcOXFHvMXfxfzBwV8/HGuvlKcdNsTqXfCi3PcYQEAWhpFF/YgVbA=="
+  "resolved" "https://registry.npmjs.org/@react-spring/three/-/three-9.2.3.tgz"
+  "version" "9.2.3"
+  dependencies:
+    "@react-spring/animated" "~9.2.0"
+    "@react-spring/core" "~9.2.0"
+    "@react-spring/shared" "~9.2.0"
+    "@react-spring/types" "~9.2.0"
+
+"@react-spring/types@~9.2.0":
+  "integrity" "sha512-G7AWUJavwsvvvprnYmqUXE5N1XKINktc8V72ipvkFTE3DD3GApYpX/ORNmieJljKJYvBSBzpRSIzk2qELUs30Q=="
+  "resolved" "https://registry.npmjs.org/@react-spring/types/-/types-9.2.3.tgz"
+  "version" "9.2.3"
+
 "@react-three/drei@^5.3.1":
   "integrity" "sha512-+92kxpmusIHYB2y47QnCBFev9M9/aBddpi45Xn3xzbbtyUjun7h+yOFSNcfJU/+UBfTU1kT0akLJfp3SVcoAsw=="
   "resolved" "https://registry.npmjs.org/@react-three/drei/-/drei-5.3.1.tgz"
@@ -9696,7 +9741,7 @@
   dependencies:
     "debounce" "^1.2.0"
 
-"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16 || ^17", "react@^16.8 || ^17.0", "react@^17.0.2", "react@>= 16", "react@>= 16.8", "react@>= 16.8.0", "react@>=15", "react@>=16.13", "react@>=16.8", "react@>=16.8.0", "react@>=17.0", "react@>=17.0.0 <19.0.0", "react@17.0.2":
+"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16 || ^17", "react@^16.8 || ^17.0", "react@^16.8.0  || ^17.0.0", "react@^17.0.2", "react@>= 16", "react@>= 16.8", "react@>= 16.8.0", "react@>=15", "react@>=16.11", "react@>=16.13", "react@>=16.8", "react@>=16.8.0", "react@>=17.0", "react@>=17.0.0 <19.0.0", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"

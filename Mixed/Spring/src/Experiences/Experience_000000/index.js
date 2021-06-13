@@ -15,9 +15,9 @@ export default function Experience({ location }) {
       <div id="canvas-container">
       {transitions.map(({ item, props, key }) => (
         <animated.div key={key} style={props}>
-        <Canvas>
+        <Canvas camera={{ position: [5, 5, 10], fov: 35 }}>
           <ambientLight intensity={0.1} />
-          <directionalLight color="red" position={[0, 0, 5]} />
+          <directionalLight color="red" position={[-1, 3, 5]} />
           <mesh position={[0, 0, 3 ]}>
             <boxGeometry />
             <meshPhongMaterial />
