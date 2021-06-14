@@ -176,7 +176,7 @@ export class ImagePerlinNoiseMaterial extends THREE.ShaderMaterial {
       void main() {
         vUv = uv;
         noise = 0.05 *  -.10 * turbulence( .5 * normal + uTime );
-        float b = pnoise( 1.0 * position + vec3( 0.25 * uTime ), vec3( 100.0 ) );
+        float b = pnoise( 3.0 * position + vec3( 0.25 * uTime ), vec3( 100.0 ) ) * uVelo;
         float displacement = - noise + b;
         vec3 newPosition = position + 0.025 * displacement;
         gl_Position = projectionMatrix * modelViewMatrix * vec4( newPosition, 1.0 );
