@@ -18,3 +18,4 @@
 * **Experience_000013**: Creating a reflection effect without any background (portal effect)
 * **Experience_000015**: Creating a progress shader effect from top to bottom (gl-transitions)
 * **Experience_000016**: Creating a progress shader effect from (gl-transition)
+* **Experience_000017**: Creating a wave effect with perlin noise

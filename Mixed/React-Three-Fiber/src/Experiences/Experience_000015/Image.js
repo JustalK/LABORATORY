@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { useLoader, useFrame } from '@react-three/fiber'
 import * as THREE from "three"
-import "./ImageFadeMaterial"
+import "./ImageTopBottomMaterial"
 
 export default function Scene() {
   const ref = useRef()
@@ -18,7 +18,7 @@ export default function Scene() {
       ref.current.uMouse = e.intersections[0].uv
     }}>
       <planeGeometry args={[1, 1, 32, 32]} />
-      <imageFadeMaterial ref={ref} tDiffuse={tDiffuse} />
+      <imageTopBottomMaterial ref={ref} tDiffuse={tDiffuse} />
     </mesh>
   )
 }
