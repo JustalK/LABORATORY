@@ -7,7 +7,7 @@ export default function Transition() {
       <InitialTransition />
       <Canvas>
         <ambientLight intensity={0.1} />
-        <directionalLight color="blue" position={[0, 0, 5]} />
+        <directionalLight color="pink" position={[0, 0, 5]} />
         <mesh position={[0, 0, 0 ]}>
           <boxGeometry />
           <meshPhongMaterial />
