@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 export default function Experience() {
   return (
     <div id="canvas-container">
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+      <motion.div className="sub-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
         <Canvas>
           <ambientLight intensity={0.1} />
           <directionalLight color="blue" position={[0, 0, 5]} />
