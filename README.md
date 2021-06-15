@@ -16,13 +16,14 @@ Just some testing with the UI
 
 ## Javascript
 
-* **CSS**: ([My experiences with CSS effect](Javascript/CSS/README.md))
-* **React**: ([My experiences with React](Javascript/React/README.md))
-* **Three**: ([My experiences with Three and WebGL](Javascript/Three/README.md))
-* **Vue**: ([My experiences with Vue](Javascript/React/README.md))
+* **CSS**: ([My experiences with CSS effect](https://github.com/JustalK/LABORATORY/tree/master/Javascript/CSS/README.md))
+* **React**: ([My experiences with React](https://github.com/JustalK/LABORATORY/tree/master/Javascript/React/README.md))
+* **Three**: ([My experiences with Three and WebGL](https://github.com/JustalK/LABORATORY/tree/master/Javascript/Three/README.md))
+* **Vue**: ([My experiences with Vue](https://github.com/JustalK/LABORATORY/tree/master/Javascript/React/README.md))
 
 ## Mixed
 
-* **Three**: ([My experiences with Three mixed with React](Mixed/Three/README.md))
-* **React-Three-Fiber**: ([My experiences with React-Three-Fiber](Mixed/Three/README.md))
-* **React-Spring**: ([My experiences with React-Spring](Mixed/Spring/README.md))
+* **Three**: ([My experiences with Three mixed with React](https://github.com/JustalK/LABORATORY/tree/master/Mixed/Three/README.md))
+* **React-Three-Fiber**: ([My experiences with React-Three-Fiber](https://github.com/JustalK/LABORATORY/tree/master/Mixed/Three/README.md))
+* **React-Spring**: ([My experiences with React-Spring](https://github.com/JustalK/LABORATORY/tree/master/Mixed/Spring))
+* **Framer-motion**: ([My experiences with Framer-motion](https://github.com/JustalK/LABORATORY/tree/master/Mixed/Framer-motion))

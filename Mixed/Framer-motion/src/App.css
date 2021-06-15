@@ -1,0 +1,56 @@
+.navigation {
+  position: fixed;
+  opacity: 0.8;
+  z-index: 200;
+  width: 200px;
+  display: block;
+  height: 100vh;
+  float: left;
+  border-right: 1px solid black;
+  background: #e2e2e2;
+}
+
+.content {
+  width: calc(100%);
+  float: left;
+}
+
+#canvas-container {
+  width: 100%;
+  height: 100vh;
+}
+
+#canvas-container div {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+}
+
+.label {
+  pointer-events: none;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -3px;
+  line-height: 0.7em;
+}
+
+.date {
+  color: #ff1050;
+  pointer-events: none;
+}
+
+.name {
+  color: white;
+  text-align: center;
+  pointer-events: none;
+}
