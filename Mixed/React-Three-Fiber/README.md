@@ -19,3 +19,5 @@
 * **Experience_000015**: Creating a progress shader effect from top to bottom (gl-transitions)
 * **Experience_000016**: Creating a progress shader effect from (gl-transition)
 * **Experience_000017**: Creating a wave effect with perlin noise
+* **Experience_000018**: Adding a text in r3f
+* **Experience_000019**: Adding shader with fresnel filter on mouse r3f
