@@ -25,3 +25,4 @@ The problem is the developer of this module does not wanna use the three js loca
 * **Experience_000010**: ShaderPass hover effect (Pixel Effect)
 * **Experience_000011**: Scroll with multiple image in Three.js
 * **Experience_000012**: Adding a text element in a 3d scene (troika)
+* **Experience_000013**: Adding a shader to a text

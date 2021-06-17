@@ -10,6 +10,9 @@ export default class Animation {
   scene = null
   clock = null
   board = null
+  fragmentShader = null
+  vertexShader = null
+  uniforms = null
 
   constructor(doc) {
     this.width = doc.clientWidth
@@ -18,6 +21,7 @@ export default class Animation {
     this.initRenderer()
     this.initScene()
     this.initCamera()
+    this.initShader()
     this.initText();
     this.initClock()
 
@@ -46,10 +50,38 @@ export default class Animation {
     this.clock = new THREE.Clock();
   }
 
+  initShader() {
+    this.fragmentShader = `
+      varying vec2 v_uv;
+      uniform float u_time;
+      void main() {
+      	gl_FragColor = vec4(cos(5.0 * u_time), cos(3.14 + 5.0 * u_time), 0.0, 1.0);
+      }
+    `
+
+    this.vertexShader = `
+      varying vec2 v_uv;
+      void main() {
+          v_uv = uv;
+
+          gl_Position = projectionMatrix * modelViewMatrix *
+      		vec4(position, 1.0);
+      }
+    `
+  }
+
   initText() {
     const myText = new Text()
     this.scene.add(myText);
+    this.uniforms = {
+        u_time: { value: 0 }
+    }
     myText.text = 'Hello world!'
+    myText.material = new THREE.ShaderMaterial({
+      uniforms: this.uniforms,
+      fragmentShader: this.fragmentShader,
+      vertexShader: this.vertexShader
+    })
     myText.fontSize = 10
     myText.rotation.y = Math.PI
     myText.color = 0x9966FF;
@@ -59,6 +91,9 @@ export default class Animation {
 
   render() {
     this.renderer.render(this.scene, this.camera)
+    if (this.uniforms) {
+      this.uniforms.u_time.value += 0.01
+    }
 
     window.requestAnimationFrame(this.render.bind(this))
   }
