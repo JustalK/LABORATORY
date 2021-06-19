@@ -30,6 +30,7 @@
 * **Experience_000026**: useCallback (a function not re-evaluated with child components)
 * **Experience_000027**: Create a portal (breaking throught the DOM three)
 * **Experience_000028**: Using the profiler (also using the react devtool extention for chrome)
+* **Experience_000029**: Uncontrolled vs controlled component
 
 ## Fail Experiences (Not possible)
 
