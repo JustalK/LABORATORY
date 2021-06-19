@@ -30,7 +30,7 @@ export default function Scene() {
       position-z={-2}
       fontSize={1}
       color= "#99ccff"
-      maxWidth={300}
+      maxWidth={400}
       text="Hello World!"
       font={Roboto}
       anchorX="center"
