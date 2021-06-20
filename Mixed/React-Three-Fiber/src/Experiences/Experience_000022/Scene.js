@@ -28,8 +28,8 @@ export default function Experience() {
           depthTest={false}
           lineWidth={0.01}
           color={'#9c88ff'}
-          dashArray={2.0}
-          dashRatio={0.9}
+          dashArray={0.5}
+          dashRatio={0.1}
         />
       </mesh>
     </>
