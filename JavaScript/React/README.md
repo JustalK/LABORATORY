@@ -33,6 +33,7 @@
 * **Experience_000029**: Uncontrolled vs controlled component
 * **Experience_000030**: Forward a ref or Getting a ref of a children from parent
 * **Experience_000031**: useImperativeHandle (Forward multiple refs)
+* **Experience_000032**: useRef vs useState (Optimization hack)
 
 ## Fail Experiences (Not possible)
 
