@@ -5,6 +5,7 @@
   float: left;
   border-right: 1px solid black;
   background: #e2e2e2;
+  overflow: scroll;
 }
 
 .content {

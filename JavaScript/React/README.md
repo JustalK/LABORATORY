@@ -34,6 +34,7 @@
 * **Experience_000030**: Forward a ref or Getting a ref of a children from parent
 * **Experience_000031**: useImperativeHandle (Forward multiple refs)
 * **Experience_000032**: useRef vs useState (Optimization hack)
+* **Experience_000033**: Update state of children from parent
 
 ## Fail Experiences (Not possible)
 
