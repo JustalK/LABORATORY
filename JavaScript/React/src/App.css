@@ -12,3 +12,7 @@
   float: left;
   margin: 20px 5%;
 }
+
+span {
+  display: block;
+}
