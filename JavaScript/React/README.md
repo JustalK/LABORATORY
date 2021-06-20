@@ -31,6 +31,7 @@
 * **Experience_000027**: Create a portal (breaking throught the DOM three)
 * **Experience_000028**: Using the profiler (also using the react devtool extention for chrome)
 * **Experience_000029**: Uncontrolled vs controlled component
+* **Experience_000030**: Forward a ref or Getting a ref of a children from parent
 
 ## Fail Experiences (Not possible)
 
