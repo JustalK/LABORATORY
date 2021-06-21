@@ -20,6 +20,7 @@ Just some testing with the UI
 * **React**: ([My experiences with React](https://github.com/JustalK/LABORATORY/tree/master/Javascript/React/README.md))
 * **Three**: ([My experiences with Three and WebGL](https://github.com/JustalK/LABORATORY/tree/master/Javascript/Three/README.md))
 * **Vue**: ([My experiences with Vue](https://github.com/JustalK/LABORATORY/tree/master/Javascript/React/README.md))
+* **Angular**: ([My experiences with Angular](https://github.com/JustalK/LABORATORY/tree/master/Javascript/Angular/README.md))
 
 ## Mixed
 
