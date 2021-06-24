@@ -1,6 +1,12 @@
 nav {
-  background: red;
+  background: #e2e2e2;
   width: 200px;
   height: 100%;
   border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+
+  & a {
+    padding: 5px 10px;
+  }
 }
