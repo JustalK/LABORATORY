@@ -24,6 +24,10 @@ import { Experience000006Component } from './experience000006/experience000006.c
 import Experience000006ParentComponent from './experience000006/parent/parent.component';
 import Experience000006ChildrenComponent from './experience000006/children/children.component';
 
+import { Experience000007Component } from './experience000007/experience000007.component';
+import Experience000007ParentComponent from './experience000007/parent/parent.component';
+import Experience000007ChildrenComponent from './experience000007/children/children.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +45,10 @@ import Experience000006ChildrenComponent from './experience000006/children/child
     Experience000005ChildrenComponent,
     Experience000006Component,
     Experience000006ParentComponent,
-    Experience000006ChildrenComponent
+    Experience000006ChildrenComponent,
+    Experience000007Component,
+    Experience000007ParentComponent,
+    Experience000007ChildrenComponent
   ],
   imports: [
     BrowserModule,
