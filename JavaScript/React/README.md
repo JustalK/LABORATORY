@@ -35,6 +35,7 @@
 * **Experience_000031**: useImperativeHandle (Forward multiple refs)
 * **Experience_000032**: useRef vs useState (Optimization hack)
 * **Experience_000033**: Update state of children from parent
+* **Experience_000034**: useState is stable (playing with tick)
 
 ## Fail Experiences (Not possible)
 

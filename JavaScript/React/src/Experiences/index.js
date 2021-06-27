@@ -31,6 +31,7 @@ import Experience_000030 from './Experience_000030'
 import Experience_000031 from './Experience_000031'
 import Experience_000032 from './Experience_000032'
 import Experience_000033 from './Experience_000033'
+import Experience_000034 from './Experience_000034'
 
 export {
   Experience_000001,
@@ -65,5 +66,6 @@ export {
   Experience_000030,
   Experience_000031,
   Experience_000032,
-  Experience_000033
+  Experience_000033,
+  Experience_000034
 }
