@@ -39,6 +39,8 @@
 * **Experience_000035**: Global EventListener instead of onChange (hard because so many cases)
 * **Experience_000036**: Inception (A component in a component)
 * **Experience_000037**: Recursive component and useState
+* **Experience_000038**: Testing performance (map inside)
+* **Experience_000039**: Testing performance (map outside) (Best)
 
 ## Fail Experiences (Not possible)
 
