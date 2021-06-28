@@ -37,6 +37,8 @@
 * **Experience_000033**: Update state of children from parent
 * **Experience_000034**: useState is stable (playing with tick)
 * **Experience_000035**: Global EventListener instead of onChange (hard because so many cases)
+* **Experience_000036**: Inception (A component in a component)
+* **Experience_000037**: Recursive component and useState
 
 ## Fail Experiences (Not possible)
 
