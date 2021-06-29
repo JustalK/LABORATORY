@@ -12,6 +12,8 @@
   width: calc(100% - 201px - 10%);
   float: left;
   margin: 20px 5%;
+  overflow: hidden;
+  height: calc(100vh - 40px);
 }
 
 button,
