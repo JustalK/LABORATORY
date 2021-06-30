@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { useFrame, useThree } from '@react-three/fiber'
-import "./ImageRippleMaterial"
+import "./BackgroundFireMaterial"
 
 export default function Scene() {
   const { viewport } = useThree()
@@ -13,7 +13,7 @@ export default function Scene() {
   return (
     <mesh>
       <planeGeometry args={[viewport.width, viewport.height, 32, 32]} />
-      <imageRippleMaterial ref={ref} />
+      <backgroundFireMaterial ref={ref} />
     </mesh>
   )
 }

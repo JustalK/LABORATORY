@@ -1,7 +1,7 @@
 import * as THREE from "three"
 import { extend } from "@react-three/fiber"
 
-export class ImageRippleMaterial extends THREE.ShaderMaterial {
+export class BackgroundFireMaterial extends THREE.ShaderMaterial {
   constructor() {
     super({
       uniforms: {
@@ -57,16 +57,16 @@ export class ImageRippleMaterial extends THREE.ShaderMaterial {
             float arg = mod(float(10.0 * uTime), 50.)/50.;
             float px, py, fi=0., r=0., g=0., b=0.;
             px = (newUV.x-.5)*resolution.x/resolution.y+.5;
-            py = 1.-newUV.y;
+            py = newUV.y;
             fi = .1/((fnoise(px*9., py*9.+arg*5.)*(
                 .03+0.*length(vec2(px-.5, py/2.-.5))*.15+
                 0.1/(pow(py, 1.1)+0.1)
             )))-0.5;
             // fi = fnoise(px*7, py*7);
             if (fi <= 0.) {
-                r = 0.;
-                g = 0.;
-                b = 10.0/255.0;
+                r = 0.0;
+                g = 0.0;
+                b = 0.0;
             }
             else if (0. < fi && fi < .7) {
                 r = 0.0;
@@ -103,4 +103,4 @@ export class ImageRippleMaterial extends THREE.ShaderMaterial {
   }
 }
 
-extend({ ImageRippleMaterial })
+extend({ BackgroundFireMaterial })
