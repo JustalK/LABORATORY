@@ -27,3 +27,6 @@
 * **Experience_000023**: Adding a ripple effect (it might be better to add a noisy texture)
 * **Experience_000024**: Adding a noise full screen (shader)
 * **Experience_000025**: Adding a fire full screen (shader)
+* **Experience_000026**: Adding a ghost image (shader)
+* **Experience_000027**: Adding a noise effect image (shader)
+* **Experience_000028**: Adding a offset image (shader)
