@@ -37,6 +37,9 @@ import Experience_000036 from './Experience_000036'
 import Experience_000037 from './Experience_000037'
 import Experience_000038 from './Experience_000038'
 import Experience_000039 from './Experience_000039'
+import Experience_000040 from './Experience_000040'
+import Experience_000041 from './Experience_000041'
+import Experience_000042 from './Experience_000042'
 
 export {
   Experience_000001,
@@ -77,5 +80,8 @@ export {
   Experience_000036,
   Experience_000037,
   Experience_000038,
-  Experience_000039
+  Experience_000039,
+  Experience_000040,
+  Experience_000041,
+  Experience_000042
 }

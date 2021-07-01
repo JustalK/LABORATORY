@@ -41,6 +41,9 @@
 * **Experience_000037**: Recursive component and useState
 * **Experience_000038**: Testing performance (map inside)
 * **Experience_000039**: Testing performance (map outside) (Best)
+* **Experience_000040**: Double rerender with multiple setState in tick
+* **Experience_000041**: setState in useEffect (bad)
+* **Experience_000042**: Mounting setState (good)
 
 ## Fail Experiences (Not possible)
 
