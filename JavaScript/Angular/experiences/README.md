@@ -9,3 +9,5 @@
 * **Experience000005**: Data binding from child to parent
 * **Experience000006**: Local variable for communication between parent-children
 * **Experience000007**: ViewChild for communication between parent-children (better)
+* **Experience000008**: Services for passing data from one component to another
+* **Experience000009**: Services for passing data from one component to another
