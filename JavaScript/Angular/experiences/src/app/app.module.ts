@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -48,6 +49,10 @@ import { Experience000012Component } from './experience000012/experience000012.c
 import Experience000012ParentComponent from './experience000012/parent/parent.component';
 import Experience000012ChildrenComponent from './experience000012/children/children.component';
 
+import { Experience000013Component } from './experience000013/experience000013.component';
+import Experience000013ParentComponent from './experience000013/parent/parent.component';
+import Experience000013ChildrenComponent from './experience000013/children/children.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,11 +88,15 @@ import Experience000012ChildrenComponent from './experience000012/children/child
     Experience000011ChildrenComponent,
     Experience000012Component,
     Experience000012ParentComponent,
-    Experience000012ChildrenComponent
+    Experience000012ChildrenComponent,
+    Experience000013Component,
+    Experience000013ParentComponent,
+    Experience000013ChildrenComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
