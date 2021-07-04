@@ -1,6 +1,19 @@
 <button (click)="changeClass()">Change color with ngClass</button><br />
 <button (click)="changeStyle()">Change color with ngSyle</button><br />
+<button (click)="changeChildrenActive()">Remove children</button><br />
 <span [ngStyle]="style" [ngClass]="class ? 'activated' : ''">Result</span><br /><br />
 <label for="example-ngModel">[(ngModel)]:</label>
 <input [(ngModel)]="currentItem.name" (ngModelChange)="onChange()" id="example-ngModel">
-<app-experience000013-children></app-experience000013-children>
+<div *ngFor="let number of numbers; let i=index">
+  <span>(index: {{i}}) => {{number}}</span>
+</div>
+<div>
+  <span>The children is : <ng-container *ngIf="isChildrenActive">Active</ng-container><ng-container *ngIf="!isChildrenActive">Inactive</ng-container></span>
+</div>
+<button (click)="incrementCase()">Increment case</button><br />
+<div [ngSwitch]="switchCase">
+  <span *ngSwitchCase="1">This is case 1</span>
+  <span *ngSwitchCase="2">This is case 2</span>
+  <span *ngSwitchDefault>This is case default</span>
+</div>
+<app-experience000013-children *ngIf="isChildrenActive"></app-experience000013-children>
