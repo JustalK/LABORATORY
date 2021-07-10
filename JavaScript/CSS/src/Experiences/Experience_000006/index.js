@@ -15,7 +15,7 @@ const Experience = () => {
 
   return (
     <div className="experience_000006 theme-3">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" focusable="false">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" focusable="false">
         <symbol id="ripply-scott" viewBox="0 0 100 100">
           <g>
             <polygon points="5.6,77.4 0,29 39.1,0 83.8,19.3 89.4,67.7 50.3,96.7" />

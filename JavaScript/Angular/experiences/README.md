@@ -16,3 +16,4 @@
 * **Experience000012**: Single and multiple content projection (ng-content select)
 * **Experience000013**: Add Build-in attribute directive
 * **Experience000013**: Add Attribute Directives
+* **Experience000014**: Playing with a directive component
