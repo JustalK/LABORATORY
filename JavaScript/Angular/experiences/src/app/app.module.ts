@@ -58,6 +58,10 @@ import Experience000014ParentComponent from './experience000014/parent/parent.co
 import Experience000014ChildrenComponent from './experience000014/children/children.component';
 import Directive000014 from './experience000014/directive';
 
+import { Experience000015Component } from './experience000015/experience000015.component';
+import Experience000015ParentComponent from './experience000015/parent/parent.component';
+import Experience000015ChildrenComponent from './experience000015/children/children.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,7 +104,10 @@ import Directive000014 from './experience000014/directive';
     Experience000014Component,
     Experience000014ParentComponent,
     Experience000014ChildrenComponent,
-    Directive000014
+    Directive000014,
+    Experience000015Component,
+    Experience000015ParentComponent,
+    Experience000015ChildrenComponent,
   ],
   imports: [
     BrowserModule,
