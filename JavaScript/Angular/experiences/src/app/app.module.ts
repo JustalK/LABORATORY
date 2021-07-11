@@ -61,6 +61,7 @@ import Directive000014 from './experience000014/directive';
 import { Experience000015Component } from './experience000015/experience000015.component';
 import Experience000015ParentComponent from './experience000015/parent/parent.component';
 import Experience000015ChildrenComponent from './experience000015/children/children.component';
+import UnlessDirective from './experience000015/unlessDirective';
 
 @NgModule({
   declarations: [
@@ -108,6 +109,7 @@ import Experience000015ChildrenComponent from './experience000015/children/child
     Experience000015Component,
     Experience000015ParentComponent,
     Experience000015ChildrenComponent,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,
