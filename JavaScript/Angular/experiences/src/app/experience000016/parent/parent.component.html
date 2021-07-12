@@ -1,3 +1,7 @@
 
-<span>{{ currentCustomer }}</span>
+<div>{{ currentCustomer }}</div>
+<label>Type something:
+  <input #customerInput>
+</label>
+<button (click)="callConsole(customerInput.value)">Console Print</button>
 <app-experience000016-children></app-experience000016-children>

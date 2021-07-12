@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
 })
 export default class ParentComponent {
   currentCustomer = 'Maria';
+
+  callConsole(value: string) {
+    console.log(value);
+  }
 }
