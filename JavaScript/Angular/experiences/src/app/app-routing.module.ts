@@ -16,6 +16,7 @@ import { Experience000013Component } from './experience000013/experience000013.c
 import { Experience000014Component } from './experience000014/experience000014.component';
 import { Experience000015Component } from './experience000015/experience000015.component';
 import { Experience000016Component } from './experience000016/experience000016.component';
+import { Experience000017Component } from './experience000017/experience000017.component';
 
 const routes: Routes = [
   { path: 'experience000001', component: Experience000001Component },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'experience000014', component: Experience000014Component },
   { path: 'experience000015', component: Experience000015Component },
   { path: 'experience000016', component: Experience000016Component },
+  { path: 'experience000017', component: Experience000017Component },
   { path: '', redirectTo: '/', pathMatch: 'full' }
 ];
 

@@ -68,6 +68,10 @@ import Experience000016ParentComponent from './experience000016/parent/parent.co
 import Experience000016ChildrenComponent from './experience000016/children/children.component';
 import Experience000016CustomPipe from './experience000016/exponentiel.pipe';
 
+import { Experience000017Component } from './experience000017/experience000017.component';
+import Experience000017ParentComponent from './experience000017/parent/parent.component';
+import Experience000017ChildrenComponent from './experience000017/children/children.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -118,7 +122,10 @@ import Experience000016CustomPipe from './experience000016/exponentiel.pipe';
     Experience000016Component,
     Experience000016ParentComponent,
     Experience000016ChildrenComponent,
-    Experience000016CustomPipe
+    Experience000016CustomPipe,
+    Experience000017Component,
+    Experience000017ParentComponent,
+    Experience000017ChildrenComponent,
   ],
   imports: [
     BrowserModule,
