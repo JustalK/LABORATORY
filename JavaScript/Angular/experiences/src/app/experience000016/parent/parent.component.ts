@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 export default class ParentComponent {
   currentCustomer = 'Maria';
   birthday = new Date(1988, 3, 15);
+  power=2
 
   callConsole(value: string) {
     console.log(value);

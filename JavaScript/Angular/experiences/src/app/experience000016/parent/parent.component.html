@@ -8,5 +8,7 @@
 <p>The hero's birthday is {{ birthday | date }}</p>
 <p>The hero's birthday is {{ birthday | date:"MM/dd/yy" }} </p>
 <p>The hero's birthday is {{ birthday | date : 'short' : '+0530' | lowercase }}</p>
+<p>{{ (true ? ('true' | uppercase) : 'false') }}</p>
 <app-experience000016-children></app-experience000016-children>
-<p>Pipeline custom: {{2 | exponentialStrength: 10: 2: 10}}</p>
+<input id="power-input" type="text" [(ngModel)]="power">
+<p>Pipeline custom: {{2 | exponentialStrength: 10: power: 10}}</p>
