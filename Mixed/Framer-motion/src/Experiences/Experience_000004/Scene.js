@@ -7,9 +7,7 @@ export default function Scene({ activated }) {
   const ref = useRef()
 
   useFrame((state, delta) => {
-    if (activated.current) {
-      ref.current.uVelo += delta
-    }
+    ref.current.uVelo = activated.current ? Math.min(ref.current.uVelo + delta, 2) : Math.max(ref.current.uVelo - delta, 0)
   })
 
   return (
