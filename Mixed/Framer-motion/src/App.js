@@ -32,7 +32,7 @@ function App() {
               const Type = Experiences[e];
               return (
                 <Route key={index} path={"/" + e}>
-                  <Type />
+                  <Type location={location} />
                 </Route>
             )})}
             <Route path="/">

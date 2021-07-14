@@ -5,7 +5,7 @@ export class ImageOffsetMaterial extends THREE.ShaderMaterial {
   constructor() {
     super({
       uniforms: {
-        uVelo: { value: 0.1 },
+        uVelo: { value: 0.0 },
       },
       vertexShader: `
       varying vec2 vUv;
@@ -81,7 +81,7 @@ export class ImageOffsetMaterial extends THREE.ShaderMaterial {
       void main()  {
           vec2 newUV = vUv;
           float noise = perlinishNoise(16., newUV, 10, 2.);
-          if(noise > (uVelo+1.)*0.5){
+          if(noise > (uVelo)*0.5){
               gl_FragColor =  vec4(0.0, 0.0, 0.0, 0.0);
           }
           else{

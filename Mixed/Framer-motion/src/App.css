@@ -60,3 +60,9 @@ text {
   height: 100%;
   fill: blue;
 }
+
+.button-center {
+  position: absolute;
+  left: 50%;
+  z-index: 20000;
+}
