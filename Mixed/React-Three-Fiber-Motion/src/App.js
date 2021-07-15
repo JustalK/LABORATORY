@@ -1,36 +1,27 @@
 import './App.css';
 import React from "react";
-import {
-  Switch,
-  Route,
-  useLocation
-} from "react-router-dom";
-import * as Experiences from './Experiences'
+import Experience000001 from './Experiences/Experience_000001'
+import Experience000002 from './Experiences/Experience_000002'
 import { AnimatePresence } from "framer-motion";
 import Scene from './3d/Scene';
+import { Route } from 'wouter'
 
 function App() {
-  const location = useLocation();
-
   return (
-    <div>
-      <div className="content">
-        <AnimatePresence exitBeforeEnter>
-          <Switch location={location} key={location.pathname}>
-            {Object.keys(Experiences).map((e, index) => {
-              const Type = Experiences[e];
-              return (
-                <Route key={index} path={"/" + e}>
-                  <Type location={location} />
-                </Route>
-            )})}
-            <Route path="/">
-              <span>Click on one of the experience on the left side</span>
+    <div className="content">
+      <AnimatePresence exitBeforeEnter>
+        <Scene>
+            <Route path="/a">
+              <Experience000001 />
             </Route>
-          </Switch>
-          <Scene />
-        </AnimatePresence>
-      </div>
+            <Route path="/b">
+              <Experience000002 />
+            </Route>
+            <Route path="/">
+              <Experience000001 />
+            </Route>
+        </Scene>
+      </AnimatePresence>
     </div>
   );
 }
