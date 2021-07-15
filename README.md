@@ -26,5 +26,6 @@ Just some testing with the UI
 
 * **Three**: ([My experiences with Three mixed with React](https://github.com/JustalK/LABORATORY/tree/master/Mixed/Three/README.md))
 * **React-Three-Fiber**: ([My experiences with React-Three-Fiber](https://github.com/JustalK/LABORATORY/tree/master/Mixed/Three/README.md))
+* **React-Three-Fiber-Motion**: ([My experiences with React-Three-Fiber and Motion together](https://github.com/JustalK/LABORATORY/tree/master/Mixed/Three/README.md))
 * **React-Spring**: ([My experiences with React-Spring](https://github.com/JustalK/LABORATORY/tree/master/Mixed/Spring))
 * **Framer-motion**: ([My experiences with Framer-motion](https://github.com/JustalK/LABORATORY/tree/master/Mixed/Framer-motion))
