@@ -44,6 +44,7 @@
 * **Experience_000040**: Double rerender with multiple setState in tick
 * **Experience_000041**: setState in useEffect (bad)
 * **Experience_000042**: Mounting setState (good)
+* **Experience_000043**: Old version of React (class component)
 
 ## Fail Experiences (Not possible)
 
