@@ -1,7 +1,7 @@
 import * as THREE from "three"
 import { extend } from "@react-three/fiber"
 
-export class ImageOffsetMaterial extends THREE.ShaderMaterial {
+export class TransitionMaterial extends THREE.ShaderMaterial {
   constructor() {
     super({
       uniforms: {
@@ -82,7 +82,7 @@ export class ImageOffsetMaterial extends THREE.ShaderMaterial {
       }
       void main()  {
           vec2 newUV = vUv / resolution;
-          float noise = perlinishNoise(2., newUV, 10, 2.);
+          float noise = perlinishNoise(5., newUV, 10, 2.);
           if(noise > (uVelo)*0.5){
               gl_FragColor =  vec4(0.0, 0.0, 0.0, 0.0);
           }
@@ -100,4 +100,4 @@ export class ImageOffsetMaterial extends THREE.ShaderMaterial {
   }
 }
 
-extend({ ImageOffsetMaterial })
+extend({ TransitionMaterial })
