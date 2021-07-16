@@ -1,0 +1,68 @@
+.navigation {
+  position: fixed;
+  opacity: 0.8;
+  z-index: 200;
+  width: 200px;
+  display: block;
+  height: 100vh;
+  float: left;
+  border-right: 1px solid black;
+  background: #e2e2e2;
+}
+
+.content {
+  width: calc(100%);
+  float: left;
+}
+
+#canvas-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.sub-container {
+  width: 100%;
+  height: 100%;
+}
+
+.black-screen {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  bottom: 0;
+  background: black;
+  z-index: 20;
+}
+
+svg {
+  position: absolute;
+  display: flex;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+text {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  fill: white;
+}
+
+.rect-anim {
+  width: 100%;
+  height: 100%;
+  fill: red;
+}
+
+.rect-current {
+  width: 100%;
+  height: 100%;
+  fill: blue;
+}
+
+.button-center {
+  position: absolute;
+  left: 50%;
+  z-index: 20000;
+}
