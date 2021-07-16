@@ -45,6 +45,8 @@
 * **Experience_000041**: setState in useEffect (bad)
 * **Experience_000042**: Mounting setState (good)
 * **Experience_000043**: Old version of React (class component)
+* **Experience_000044**: Global State using redux
+* **Experience_000045**: Calling an API without Suspense (fetch method)
 
 ## Fail Experiences (Not possible)
 

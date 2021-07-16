@@ -2,7 +2,6 @@ import { useLocation } from "wouter";
 
 export default function Transition() {
   const [location, setLocation] = useLocation();
-  console.log(location)
 
   const handleClick = () => {
     setLocation("/b")
